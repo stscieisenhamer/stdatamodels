@@ -230,7 +230,7 @@ class DataModel(properties.ObjectNode, ndmodel.NDModel):
 
                 hdulist = fits.open(init_fitsopen, memmap=memmap)
                 asdffile = fits_support.from_fits(
-                    hdulist, self._schema, self._ctx, **kwargs
+                    hdulist, self._schema, self._ctx, copy_arrays=(not memmap), **kwargs
                 )
                 self._file_references.append(_FileReference(hdulist))
 

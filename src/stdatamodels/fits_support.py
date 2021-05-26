@@ -609,7 +609,8 @@ def from_fits_asdf(hdulist,
     return fits_embed.AsdfInFits.open(hdulist,
                                       ignore_version_mismatch=ignore_version_mismatch,
                                       ignore_unrecognized_tag=ignore_unrecognized_tag,
-                                      ignore_missing_extensions=ignore_missing_extensions)
+                                      ignore_missing_extensions=ignore_missing_extensions,
+                                      **kwargs)
 
 
 def from_fits_hdu(hdu, schema):
